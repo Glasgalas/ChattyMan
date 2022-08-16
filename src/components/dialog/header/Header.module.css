@@ -7,3 +7,9 @@
   border-bottom: 1px solid #9b9b9b;
   padding: 20px;
 }
+.avatar {
+  display: block;
+  border-radius: 50%;
+  width: 50px;
+  margin-right: 20px;
+}
