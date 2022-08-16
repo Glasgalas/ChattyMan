@@ -1,13 +1,19 @@
-import s from './ChatList.module.css';
 import Contacts from '../../contacts';
+import { useSelector } from 'react-redux';
+import data from '../../../data.json';
+import s from './ChatList.module.css';
 
-const ChatList = params => {
+const ChatList = () => {
+  const filter = useSelector(state => state.filter.value);
+  const filteredContacts = data.filter(contact =>
+    contact.name.toLowerCase().includes(filter.toLowerCase()),
+  );
   return (
     <div className={s.wrapper}>
       <div className={s.title}>
         <p className={s.titleText}>Chats</p>
       </div>
-      <Contacts />
+      <Contacts data={filteredContacts} />
     </div>
   );
 };
