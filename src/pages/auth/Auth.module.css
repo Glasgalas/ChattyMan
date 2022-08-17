@@ -1,0 +1,13 @@
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.link {
+  width: 300px;
+
+  background-color: rgb(231, 164, 164);
+  border-radius: 30px;
+  text-align: center;
+  padding: 5px;
+}

@@ -1,11 +1,68 @@
+import { lazy, Suspense } from 'react';
+import { Routes, Route } from 'react-router-dom';
+import PrivateRoute from './pages/privateRoute';
+import RedirectRoute from './pages/redirectRoute';
+import GoogleAuth from './components/googleAuth';
+import Success from './pages/success';
 import './App.css';
-import Main from './pages/main';
+
+const LoginPage = lazy(() => import('./pages/auth'));
+const Main = lazy(() => import('./pages/main'));
 
 function App() {
   return (
-    <div className="App">
-      <Main />
-    </div>
+    <>
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <RedirectRoute>
+              <Suspense>
+                <LoginPage />
+              </Suspense>
+            </RedirectRoute>
+          }
+        />
+        <Route
+          path="/login"
+          element={
+            <RedirectRoute>
+              <Suspense>
+                <LoginPage />
+              </Suspense>
+            </RedirectRoute>
+          }
+        />
+        <Route
+          path="/google-user"
+          element={
+            <Suspense>
+              <GoogleAuth />
+            </Suspense>
+          }
+        />
+
+        <Route
+          path="/success"
+          element={
+            <Suspense>
+              <Success />
+            </Suspense>
+          }
+        />
+
+        <Route
+          path="/main"
+          element={
+            <PrivateRoute>
+              <Suspense>
+                <Main />
+              </Suspense>
+            </PrivateRoute>
+          }
+        />
+      </Routes>
+    </>
   );
 }
 
