@@ -1,11 +1,15 @@
 import Contacts from '../../contacts';
 import { useSelector } from 'react-redux';
-import data from '../../../data.json';
+import { useGetAllQuery } from '../../../redux/messages';
+
+// import data from '../../../data.json';
 import s from './ChatList.module.css';
 
 const ChatList = () => {
   const filter = useSelector(state => state.filter.value);
-  const filteredContacts = data.filter(contact =>
+  const messages = useSelector(state => state.messages.chat);
+
+  const filteredContacts = messages.filter(contact =>
     contact.name.toLowerCase().includes(filter.toLowerCase()),
   );
   return (

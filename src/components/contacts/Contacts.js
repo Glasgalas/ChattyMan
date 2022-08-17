@@ -12,29 +12,37 @@ const Contacts = ({ data }) => {
   return (
     <div className={s.wrapper}>
       <ul className={s.list}>
-        {data.map(el => (
-          <li
-            key={el.id}
-            id={el.id}
-            className={s.listItem}
-            onClick={handleClick}
-          >
-            <div className={s.avatarWrapper}>
-              <img className={s.avatar} alt="contacts avatar" src={el.avatar} />
-            </div>
-            <div className={s.textWrapper}>
-              <p className={s.contactName}>{el.name}</p>
-              <div className={s.messageWrapper}>
-                <p className={s.contactMessage}>
-                  {el.messages[el.messages.length - 1].text}
+        {data
+          .sort((a, b) => a.dateLong - b.dateLong)
+          .map(el => (
+            <li
+              key={el.id}
+              id={el.id}
+              className={s.listItem}
+              onClick={handleClick}
+            >
+              <div className={s.avatarWrapper}>
+                <img
+                  className={s.avatar}
+                  alt="contacts avatar"
+                  src={el.avatar}
+                />
+              </div>
+              <div className={s.textWrapper}>
+                <p className={s.contactName}>{el.name}</p>
+                <div className={s.messageWrapper}>
+                  <p className={s.contactMessage}>
+                    {el.messages[el.messages.length - 1].text}
+                  </p>
+                </div>
+              </div>
+              <div className={s.dateWrapper}>
+                <p className={s.date}>
+                  {el.messages[el.messages.length - 1].dateShort}
                 </p>
               </div>
-            </div>
-            <div className={s.dateWrapper}>
-              <p className={s.date}>Jun 27, 2022</p>
-            </div>
-          </li>
-        ))}
+            </li>
+          ))}
       </ul>
     </div>
   );

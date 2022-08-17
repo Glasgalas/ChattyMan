@@ -1,37 +1,31 @@
 import React, { useEffect } from 'react';
 import { useNavigate, useSearchParams } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { useGetUserQuery, setUser } from '../../redux/auth';
-// import authOperations from '../../redux/auth/authOperations';
-// import { Spinner } from '../spinner/spinner';
 import s from './GoogleAuth.module.css';
 
 const GoogleAuth = () => {
-  const { isLogged } = useSelector(state => state.auth);
-
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const [searchParams] = useSearchParams();
   const email = searchParams.get('email');
-
-  const { isSuccess } = useGetUserQuery(email);
-  console.log(useGetUserQuery(email));
-  console.log(isSuccess);
-  // console.log(getUser(email));
-  // const { isSuccess, isError } = data;
+  const { isSuccess, data = [] } = useGetUserQuery(email);
 
   useEffect(() => {
     if (isSuccess) {
-      dispatch(setUser());
+      const { token, user, messages } = data.data;
       navigate('/main', { replace: true });
+      dispatch(
+        setUser({
+          name: user.name,
+          email: user.email,
+          token,
+          avatar: user.avatar,
+          messages,
+        }),
+      );
     }
-  }, [navigate]);
-
-  // useEffect(() => {
-  //   if (!isLogged) {
-  //     getUser(email);
-  //   }
-  // }, [dispatch, email]);
+  });
 
   return (
     <>

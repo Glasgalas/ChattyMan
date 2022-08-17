@@ -6,13 +6,15 @@
       {
         "id": "89789789",
         "isFrom": true,
-        "date": "08/16/21, 11:11AM",
+        "dateLong": "08/16/21, 11:11",
+        "dateShort": "Aug 16, 2022",
         "text": "Iure est aut unde ipsum iusto sequi."
       },
       {
-        "id": "89sreere789789",
+        "id": "89898789789",
         "isFrom": false,
-        "date": "08/16/22, 11:11AM",
+        "dateLong": "08/16/22, 11:12",
+        "dateShort": "Aug 16, 2022",
         "text": "Hello...How are you?"
       }
     ],
@@ -25,7 +27,8 @@
       {
         "id": "89789789",
         "isFrom": true,
-        "date": "06/14/22, 11:11PM",
+        "dateLong": "06/14/22, 11:11",
+        "dateShort": "Jun 14, 2022",
         "text": "Aperiam dolorum est et tenetur tempora alias aspernatur."
       }
     ],
@@ -36,9 +39,10 @@
     "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/701.jpg",
     "messages": [
       {
-        "id": "89789789",
+        "id": "897689789",
         "isFrom": true,
-        "date": "08/06/22, 11:10AM",
+        "dateLong": "08/06/22, 11:10",
+        "dateShort": "Aug 06, 2022",
         "text": "Consequuntur aut rerum consectetur."
       }
     ],
@@ -51,7 +55,8 @@
       {
         "id": "89789789",
         "isFrom": true,
-        "date": "01/16/22, 11:12AM",
+        "dateLong": "01/16/22, 11:12",
+        "dateShort": "Jan 16, 2022",
         "text": "Nihil velit earum."
       }
     ],
@@ -64,7 +69,8 @@
       {
         "id": "89789789",
         "isFrom": true,
-        "date": "06/14/22, 11:11PM",
+        "dateLong": "06/14/22, 11:11",
+        "dateShort": "Jun 14, 2022",
         "text": "Sint consequuntur illo necessitatibus inventore et quia cum voluptate."
       }
     ],
@@ -77,7 +83,8 @@
       {
         "id": "89789789",
         "isFrom": true,
-        "date": "06/14/22, 11:11PM",
+        "dateLong": "06/14/22, 11:11",
+        "dateShort": "Jun 14, 2022",
         "text": "Maiores nihil libero nisi molestias rem quo itaque aliquid sed."
       }
     ],
@@ -90,7 +97,8 @@
       {
         "id": "897800009789",
         "isFrom": true,
-        "date": "06/14/22, 11:11PM",
+        "dateLong": "06/14/22, 11:11",
+        "dateShort": "Jun 14, 2022",
         "text": "Ipsa nam tempora natus voluptas commodi nam."
       }
     ],
@@ -103,7 +111,8 @@
       {
         "id": "898778789789",
         "isFrom": true,
-        "date": "06/14/22, 11:11PM",
+        "dateLong": "06/14/22, 11:11",
+        "dateShort": "Jun 14, 2022",
         "text": "Quaerat maxime nihil voluptate perspiciatis ut recusandae maxime maxime voluptatem."
       }
     ],
@@ -116,7 +125,8 @@
       {
         "id": "82129789789",
         "isFrom": true,
-        "date": "06/14/22, 11:11PM",
+        "dateLong": "06/14/22, 11:11",
+        "dateShort": "Jun 14, 2022",
         "text": "Quam explicabo eum officiis aut architecto."
       }
     ],
@@ -129,7 +139,8 @@
       {
         "id": "8911111789789",
         "isFrom": true,
-        "date": "06/14/22, 11:11PM",
+        "dateLong": "06/14/22, 11:11",
+        "dateShort": "Jun 14, 2022",
         "text": "Omnis voluptates maxime et cum similique molestiae assumenda dignissimos."
       }
     ],
@@ -142,7 +153,8 @@
       {
         "id": "889899789789",
         "isFrom": true,
-        "date": "06/14/22, 11:11PM",
+        "dateLong": "06/14/22, 11:11",
+        "dateShort": "Jun 14, 2022",
         "text": "At totam nostrum accusantium molestiae porro qui est."
       }
     ],
@@ -155,7 +167,8 @@
       {
         "id": "89744444444443489789",
         "isFrom": true,
-        "date": "06/14/22, 11:11PM",
+        "dateLong": "06/14/22, 11:11",
+        "dateShort": "Jun 14, 2022",
         "text": "Doloribus ut ea."
       }
     ],
@@ -168,7 +181,8 @@
       {
         "id": "89722289789",
         "isFrom": true,
-        "date": "06/14/22, 11:11PM",
+        "dateLong": "06/14/22, 11:15",
+        "dateShort": "Jun 14, 2022",
         "text": "Aut iste culpa sed minima."
       }
     ],
@@ -181,7 +195,8 @@
       {
         "id": "8976689789",
         "isFrom": true,
-        "date": "06/14/22, 11:11PM",
+        "dateLong": "06/14/22, 11:17",
+        "dateShort": "Jun 14, 2022",
         "text": "Nostrum quibusdam quaerat."
       }
     ],
@@ -194,7 +209,8 @@
       {
         "id": "89789789",
         "isFrom": true,
-        "date": "06/14/22, 11:11PM",
+        "dateLong": "02/14/22, 11:11",
+        "dateShort": "Feb 14, 2022",
         "text": "Distinctio ex saepe fuga id ut facilis atque."
       }
     ],

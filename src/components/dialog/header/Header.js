@@ -3,7 +3,6 @@ import s from './Header.module.css';
 
 const Header = () => {
   const value = useSelector(state => state.currentChat);
-  // console.log(value);
   return (
     <div className={s.header}>
       {value.current && (
