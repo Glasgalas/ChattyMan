@@ -4,6 +4,7 @@
   padding: 20px;
   padding-top: 0;
   border-bottom: 1px solid #9b9b9b;
+  position: relative;
 }
 
 .input {
@@ -13,4 +14,10 @@
   outline: none;
   border: 1px solid #9b9b9b;
   padding: 10px;
+  padding-left: 35px;
+}
+.searchIcon {
+  position: absolute;
+  left: 35px;
+  top: 13px;
 }

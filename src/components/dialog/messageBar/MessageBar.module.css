@@ -13,11 +13,13 @@
 .messageItemFrom {
   display: flex;
   width: 100%;
+  height: auto;
   margin-bottom: 10px;
 }
 .messageItemTo {
   display: flex;
   width: 100%;
+  height: auto;
   margin-bottom: 10px;
   justify-content: flex-end;
 }
@@ -32,18 +34,26 @@
   display: flex;
   flex-direction: column;
   text-align: left;
+  max-width: 100%;
 }
 .textFrom {
   color: #f5f9ff;
   border-radius: 40px;
   padding: 10px;
+  padding-left: 15px;
   background-color: #3c4154;
+  height: auto;
+  word-wrap: break-word;
 }
 .textTo {
   color: #767676;
   border-radius: 40px;
   padding: 10px;
+  padding-left: 15px;
   background-color: #e0e0e0;
+  width: auto;
+  height: auto;
+  word-wrap: break-word;
 }
 .dateFrom {
   font-size: 10px;

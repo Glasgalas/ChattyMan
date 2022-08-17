@@ -1,7 +1,4 @@
-import { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { useGetResponseQuery } from '../../../redux/chuck';
-import { useGetAllQuery } from '../../../redux/messages';
+import { useSelector } from 'react-redux';
 import s from './MessageBar.module.css';
 
 const MessageBar = () => {

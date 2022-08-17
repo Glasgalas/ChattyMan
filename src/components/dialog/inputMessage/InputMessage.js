@@ -1,15 +1,17 @@
 import { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import s from './InputMessage.module.css';
 import { useGetResponseQuery } from '../../../redux/chuck';
 import { addMessage } from '../../../redux/messages';
 import { v4 } from 'uuid';
+import { MdOutlineSend } from 'react-icons/md';
+import s from './InputMessage.module.css';
 
 const InputMessage = params => {
   const dispatch = useDispatch();
   const [value, setValue] = useState('');
   const { id } = useSelector(state => state.currentChat.current);
   const { data = [], refetch } = useGetResponseQuery();
+
   function handleRefetchOne() {
     refetch();
   }
@@ -36,6 +38,7 @@ const InputMessage = params => {
         dateLong: transformDateLong(),
         dateShort: transformDateShort(),
         text: value,
+        date: Date.now(),
       }),
     );
   }
@@ -48,24 +51,29 @@ const InputMessage = params => {
         dateLong: transformDateLong(),
         dateShort: transformDateShort(),
         text: data.value,
+        date: Date.now(),
       }),
     );
   }
   const handleSubmit = () => {
-    submitFrom();
-    setValue('');
-    handleRefetchOne();
-    setTimeout(submitTo, 3000);
-  };
-
-  const handleSubmitOnKey = e => {
-    if (e.key === 'Enter') {
+    if (value) {
       submitFrom();
       setValue('');
       handleRefetchOne();
-      setTimeout(submitTo, 3000);
+      setTimeout(submitTo, 10000);
     }
   };
+  const handleSubmitOnKey = e => {
+    if (value) {
+      if (e.key === 'Enter') {
+        submitFrom();
+        setValue('');
+        handleRefetchOne();
+        setTimeout(submitTo, 10000);
+      }
+    }
+  };
+
   return (
     <div className={s.wrapper}>
       <input
@@ -76,9 +84,13 @@ const InputMessage = params => {
         onChange={e => setValue(e.target.value)}
         onKeyPress={handleSubmitOnKey}
       />
-      <button type="submit" onClick={handleSubmit}>
-        Send
-      </button>
+
+      <MdOutlineSend
+        aria-label="submit message"
+        className={s.button}
+        type="submit"
+        onClick={handleSubmit}
+      />
     </div>
   );
 };
