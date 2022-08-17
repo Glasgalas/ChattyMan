@@ -17,23 +17,3 @@ export const chuckApi = createApi({
 });
 
 export const { useGetResponseQuery } = chuckApi;
-
-// export const authSlice = createSlice({
-//   name: 'authUser',
-//   initialState: {
-//     name: '',
-//     email: '',
-//     messages: [],
-//     isLogged: null,
-//     tokken: null,
-//   },
-//   reducers: {
-//     setUser(state, action) {
-//       // const { name, value } = action.payload;
-//       // state[name] = value;
-//       state.isLogged = true;
-//     },
-//   },
-// });
-
-// export const { setUser } = authSlice.actions;

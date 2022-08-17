@@ -30,11 +30,13 @@
   align-items: center;
   justify-content: center;
   width: 20%;
+  margin-right: 5px;
 }
 .avatar {
   display: block;
   border-radius: 50%;
-  width: 50px;
+  width: 100%;
+  min-width: 35px;
 }
 .textWrapper {
   width: 60%;

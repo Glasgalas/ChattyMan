@@ -1,8 +1,5 @@
 import Contacts from '../../contacts';
 import { useSelector } from 'react-redux';
-import { useGetAllQuery } from '../../../redux/messages';
-
-// import data from '../../../data.json';
 import s from './ChatList.module.css';
 
 const ChatList = () => {

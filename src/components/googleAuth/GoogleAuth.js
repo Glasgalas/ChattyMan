@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { useNavigate, useSearchParams } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { useGetUserQuery, setUser } from '../../redux/auth';
+import PropagateLoader from 'react-spinners/PropagateLoader';
 import s from './GoogleAuth.module.css';
 
 const GoogleAuth = () => {
@@ -9,7 +10,7 @@ const GoogleAuth = () => {
   const dispatch = useDispatch();
   const [searchParams] = useSearchParams();
   const email = searchParams.get('email');
-  const { isSuccess, data = [] } = useGetUserQuery(email);
+  const { isSuccess, isLoading, data = [] } = useGetUserQuery(email);
 
   useEffect(() => {
     if (isSuccess) {
@@ -28,9 +29,16 @@ const GoogleAuth = () => {
   });
 
   return (
-    <>
+    <div className={s.wrapper}>
       <p className={s.text}>Google auth...</p>
-    </>
+      <PropagateLoader
+        className={s.loader}
+        color={'blue'}
+        loading={isLoading}
+        size={15}
+      />
+    </div>
   );
 };
+
 export default GoogleAuth;

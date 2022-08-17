@@ -13,7 +13,11 @@ const Contacts = ({ data }) => {
     <div className={s.wrapper}>
       <ul className={s.list}>
         {data
-          .sort((a, b) => a.dateLong - b.dateLong)
+          .sort(
+            (a, b) =>
+              b.messages[b.messages.length - 1].date -
+              a.messages[a.messages.length - 1].date,
+          )
           .map(el => (
             <li
               key={el.id}

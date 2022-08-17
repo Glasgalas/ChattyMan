@@ -1,13 +1,39 @@
 .wrapper {
+  height: 100vh;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+  background-color: rgb(7, 7, 39);
+}
+.title {
+  color: aqua;
+}
+.login {
+}
+.authWrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 300px;
+  height: 200px;
+  background-color: rgb(115, 215, 223);
+  border-radius: 30px;
 }
 .link {
-  width: 300px;
-
-  background-color: rgb(231, 164, 164);
+  width: 200px;
   border-radius: 30px;
+  color: white;
+  background-color: rgb(84, 148, 245);
+  border: 1px solid rgb(17, 17, 17);
   text-align: center;
   padding: 5px;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: transform cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+.link:hover,
+.link:focus {
+  transform: scale(1.1);
 }
