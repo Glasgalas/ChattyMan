@@ -1,6 +1,7 @@
+import { MdOutlineSend } from 'react-icons/md';
 import s from './InputMessage.module.css';
 
-const InputMessage = params => {
+const InputMessage = () => {
   // 4/22/17, 4:00AM
   //  Jun 12, 2022
   function transformDateForMessage() {
