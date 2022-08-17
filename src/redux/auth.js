@@ -1,26 +1,23 @@
-import { createApi } from '@reduxjs/toolkit/query/react';
+import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 import { createSlice } from '@reduxjs/toolkit';
-import { axiosBaseQuery } from './axiosBaseQuery';
 
 export const authApi = createApi({
   reducerPath: 'auth',
-  baseQuery: axiosBaseQuery({
-    // baseUrl: 'https://chatty-man.herokuapp.com/api',
-    baseUrl: 'http://localhost:3000/api',
+  baseQuery: fetchBaseQuery({
+    baseUrl: 'https://chatty-man.herokuapp.com/api',
+    // baseUrl: 'http://localhost:3000/api',
   }),
   tagTypes: ['Auth'],
   endpoints: builder => ({
     getUser: builder.query({
       query: email => ({
         url: `/users/google-user/${email}`,
-        method: 'GET',
       }),
       providesTags: ['Auth'],
     }),
     logout: builder.query({
       query: () => ({
         url: '/users/logout',
-        method: 'GET',
       }),
       providesTags: ['Auth'],
     }),
@@ -34,14 +31,18 @@ export const authSlice = createSlice({
   initialState: {
     name: '',
     email: '',
+    avatar: '',
     messages: [],
     isLogged: null,
-    tokken: null,
+    token: null,
   },
   reducers: {
     setUser(state, action) {
-      // const { name, value } = action.payload;
-      // state[name] = value;
+      state.name = action.payload.name;
+      state.email = action.payload.email;
+      state.token = action.payload.token;
+      state.messages = action.payload.messages;
+      state.avatar = action.payload.avatar;
       state.isLogged = true;
     },
   },
