@@ -5,7 +5,6 @@ export const authApi = createApi({
   reducerPath: 'auth',
   baseQuery: fetchBaseQuery({
     baseUrl: 'https://chatty-man.herokuapp.com/api',
-    // baseUrl: 'http://localhost:3000/api',
   }),
   tagTypes: ['Auth'],
   endpoints: builder => ({

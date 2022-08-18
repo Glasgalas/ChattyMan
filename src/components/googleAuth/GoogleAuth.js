@@ -11,7 +11,7 @@ const GoogleAuth = () => {
   const [searchParams] = useSearchParams();
   const email = searchParams.get('email');
   const { isSuccess, isLoading, data = [] } = useGetUserQuery(email);
-
+  const color = '#7e6fee';
   useEffect(() => {
     if (isSuccess) {
       const { token, user } = data.data;
@@ -32,7 +32,7 @@ const GoogleAuth = () => {
       <p className={s.text}>Google auth...</p>
       <PropagateLoader
         className={s.loader}
-        color={'blue'}
+        color={color}
         loading={isLoading}
         size={15}
       />

@@ -1,6 +1,7 @@
 import React, { Fragment } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { setCurrentChat } from '../../../redux/currentChat';
+import { clearFilter } from '../../../redux/filter';
 import Media from 'react-media';
 import { MdOutlineArrowBackIosNew } from 'react-icons/md';
 import s from './Header.module.css';
@@ -9,6 +10,7 @@ const Header = () => {
   const dispatch = useDispatch();
   const handleBack = () => {
     dispatch(setCurrentChat(null));
+    dispatch(clearFilter());
   };
   const value = useSelector(state => state.currentChat);
   return (

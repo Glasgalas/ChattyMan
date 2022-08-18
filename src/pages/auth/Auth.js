@@ -7,8 +7,10 @@ const Auth = () => {
   const handleClick = () => {
     setLoad(true);
   };
+  const color = '#7e6fee';
   return (
     <div className={s.wrapper}>
+      <img alt="logo site" src="./logo256.png" width="256" />
       <h1 className={s.title}>Chatty-man</h1>
       <div className={s.authWrap}>
         <h2 className={s.login}>Log in to your account</h2>
@@ -22,7 +24,7 @@ const Auth = () => {
       </div>
       <PropagateLoader
         className={s.loader}
-        color={'blue'}
+        color={color}
         loading={isLoad}
         size={15}
       />
