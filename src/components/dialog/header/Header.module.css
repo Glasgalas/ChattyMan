@@ -1,6 +1,7 @@
 .header {
   display: flex;
   width: 100%;
+  min-height: 50px;
   height: 10vh;
   align-items: center;
   background-color: #f5f5f5;
@@ -12,4 +13,14 @@
   border-radius: 50%;
   width: 50px;
   margin-right: 20px;
+}
+.btnBack {
+  margin-right: 10px;
+  cursor: pointer;
+  padding: 10px;
+}
+.btnBack:hover,
+.btnBack:focus {
+  outline: auto;
+  background-color: #e0dede;
 }

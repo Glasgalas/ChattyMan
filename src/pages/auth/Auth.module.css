@@ -37,5 +37,5 @@
 }
 .loader {
   top: 5%;
-  transform: translate(-50%, -50%);
+  transform: translateX(-9px);
 }

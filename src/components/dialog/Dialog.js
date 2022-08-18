@@ -3,6 +3,7 @@ import MessageBar from './messageBar';
 import InputMessage from './inputMessage';
 import { useSelector, useDispatch } from 'react-redux';
 import { clearPushed } from '../../redux/messages';
+
 import s from './Dialog.module.css';
 
 const Dialog = () => {
@@ -19,6 +20,7 @@ const Dialog = () => {
       );
     }
   };
+
   return (
     <div onClick={handleClick} className={s.wrapper}>
       {current ? (

@@ -32,7 +32,6 @@ export const authSlice = createSlice({
     name: '',
     email: '',
     avatar: '',
-    messages: [],
     isLogged: null,
     token: null,
   },
@@ -41,7 +40,6 @@ export const authSlice = createSlice({
       state.name = action.payload.name;
       state.email = action.payload.email;
       state.token = action.payload.token;
-      state.messages = action.payload.messages;
       state.avatar = action.payload.avatar;
       state.isLogged = true;
     },

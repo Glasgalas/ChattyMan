@@ -10,11 +10,11 @@ const GoogleAuth = () => {
   const dispatch = useDispatch();
   const [searchParams] = useSearchParams();
   const email = searchParams.get('email');
-  const { isSuccess, isLoading = true, data = [] } = useGetUserQuery(email);
+  const { isSuccess, isLoading, data = [] } = useGetUserQuery(email);
 
   useEffect(() => {
     if (isSuccess) {
-      const { token, user, messages } = data.data;
+      const { token, user } = data.data;
       navigate('/main', { replace: true });
       dispatch(
         setUser({
@@ -22,7 +22,6 @@ const GoogleAuth = () => {
           email: user.email,
           token,
           avatar: user.avatar,
-          messages,
         }),
       );
     }
