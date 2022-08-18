@@ -12,7 +12,9 @@ const MessageBar = () => {
       <ul className={s.list}>
         {chat?.messages.map(({ isFrom, text, dateLong, id }) => (
           <li className={isFrom ? s.messageItemFrom : s.messageItemTo} key={id}>
-            {isFrom && <img className={s.avatar} src={chat.avatar} />}
+            {isFrom && (
+              <img className={s.avatar} src={chat.avatar} alt="avatar" />
+            )}
             <div className={s.textWrap}>
               <p className={isFrom ? s.textFrom : s.textTo}>{text}</p>
               <p className={isFrom ? s.dateFrom : s.dateTo}>{dateLong}</p>

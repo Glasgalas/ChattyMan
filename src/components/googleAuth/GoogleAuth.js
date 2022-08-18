@@ -10,7 +10,7 @@ const GoogleAuth = () => {
   const dispatch = useDispatch();
   const [searchParams] = useSearchParams();
   const email = searchParams.get('email');
-  const { isSuccess, isLoading, data = [] } = useGetUserQuery(email);
+  const { isSuccess, isLoading = true, data = [] } = useGetUserQuery(email);
 
   useEffect(() => {
     if (isSuccess) {

@@ -1,13 +1,22 @@
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { setCurrentChat } from '../../redux/currentChat';
+import { clearPushed } from '../../redux/messages';
 import s from './Contacts.module.css';
 
 const Contacts = ({ data }) => {
+  const current = useSelector(state => state.currentChat.current);
   const dispatch = useDispatch();
   const handleClick = e => {
     const contactId = e.currentTarget.id;
     const contact = data.find(el => el.id === contactId);
     dispatch(setCurrentChat(contact));
+    if (contact.pushed > 0) {
+      dispatch(
+        clearPushed({
+          contactId: contact.id,
+        }),
+      );
+    }
   };
   return (
     <div className={s.wrapper}>
@@ -22,7 +31,9 @@ const Contacts = ({ data }) => {
             <li
               key={el.id}
               id={el.id}
-              className={s.listItem}
+              className={
+                el.id === current?.id ? `${s.listItem} ${s.active}` : s.listItem
+              }
               onClick={handleClick}
             >
               <div className={s.avatarWrapper}>
@@ -44,6 +55,7 @@ const Contacts = ({ data }) => {
                 <p className={s.date}>
                   {el.messages[el.messages.length - 1].dateShort}
                 </p>
+                {el.pushed > 0 && <div className={s.pushed}>{el.pushed}</div>}
               </div>
             </li>
           ))}

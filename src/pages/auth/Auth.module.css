@@ -9,8 +9,6 @@
 .title {
   color: aqua;
 }
-.login {
-}
 .authWrap {
   display: flex;
   flex-direction: column;
@@ -36,4 +34,8 @@
 .link:hover,
 .link:focus {
   transform: scale(1.1);
+}
+.loader {
+  top: 5%;
+  transform: translate(-50%, -50%);
 }

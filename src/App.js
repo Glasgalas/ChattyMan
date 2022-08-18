@@ -3,7 +3,6 @@ import { Routes, Route } from 'react-router-dom';
 import PrivateRoute from './pages/privateRoute';
 import RedirectRoute from './pages/redirectRoute';
 import GoogleAuth from './components/googleAuth';
-import Success from './pages/success';
 import './App.css';
 
 const LoginPage = lazy(() => import('./pages/auth'));
@@ -38,15 +37,6 @@ function App() {
           element={
             <Suspense>
               <GoogleAuth />
-            </Suspense>
-          }
-        />
-
-        <Route
-          path="/success"
-          element={
-            <Suspense>
-              <Success />
             </Suspense>
           }
         />
