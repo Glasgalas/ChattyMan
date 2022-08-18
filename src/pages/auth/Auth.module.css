@@ -7,7 +7,7 @@
   background-color: rgb(7, 7, 39);
 }
 .title {
-  color: aqua;
+  color: #3a9ce8;
 }
 .authWrap {
   display: flex;
@@ -16,20 +16,21 @@
   align-items: center;
   width: 300px;
   height: 200px;
-  background-color: rgb(115, 215, 223);
+  background-color: #7674ed;
   border-radius: 30px;
 }
 .link {
   width: 200px;
   border-radius: 30px;
   color: white;
-  background-color: rgb(84, 148, 245);
+  background-color: #9d5bf2;
   border: 1px solid rgb(17, 17, 17);
   text-align: center;
   padding: 5px;
   text-transform: uppercase;
   text-decoration: none;
-  transition: transform cubic-bezier(0.075, 0.82, 0.165, 1);
+  transform: scale(1);
+  transition: transform 0.5s ease;
 }
 .link:hover,
 .link:focus {
