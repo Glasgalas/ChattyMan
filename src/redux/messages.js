@@ -16,10 +16,22 @@ export const messageSlice = createSlice({
         el => el.id === action.payload.contactId,
       );
       arrMessages[indx].messages.push(action.payload);
+      if (action.payload.isFrom) {
+        arrMessages[indx].pushed += 1;
+      }
+
+      localStorage.setItem('chatty', JSON.stringify(arrMessages));
+    },
+    clearPushed(state, action) {
+      const arrMessages = state.chat;
+      const indx = arrMessages.findIndex(
+        el => el.id === action.payload.contactId,
+      );
+      arrMessages[indx].pushed = 0;
 
       localStorage.setItem('chatty', JSON.stringify(arrMessages));
     },
   },
 });
 
-export const { addMessage } = messageSlice.actions;
+export const { addMessage, clearPushed } = messageSlice.actions;
