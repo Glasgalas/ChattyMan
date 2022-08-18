@@ -3,7 +3,7 @@ import Search from './search';
 import ChatList from './chatList';
 import s from './Sidebar.module.css';
 
-const Sidebar = params => {
+const Sidebar = () => {
   return (
     <div className={s.wrapper}>
       <Header />
