@@ -7,6 +7,7 @@ import './App.css';
 
 const LoginPage = lazy(() => import('./pages/auth'));
 const Main = lazy(() => import('./pages/main'));
+const NotFound = lazy(() => import('./pages/notFound'));
 
 function App() {
   return (
@@ -38,6 +39,16 @@ function App() {
             <Suspense>
               <GoogleAuth />
             </Suspense>
+          }
+        />
+        <Route
+          path="*"
+          element={
+            <PrivateRoute>
+              <Suspense>
+                <NotFound />
+              </Suspense>
+            </PrivateRoute>
           }
         />
 

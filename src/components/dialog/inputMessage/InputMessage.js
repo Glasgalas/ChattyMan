@@ -6,7 +6,7 @@ import { v4 } from 'uuid';
 import { MdOutlineSend } from 'react-icons/md';
 import s from './InputMessage.module.css';
 
-const InputMessage = params => {
+const InputMessage = () => {
   const dispatch = useDispatch();
   const [value, setValue] = useState('');
   const { id } = useSelector(state => state.currentChat.current);
@@ -88,7 +88,7 @@ const InputMessage = params => {
       <MdOutlineSend
         aria-label="submit message"
         className={s.button}
-        type="submit"
+        // type="submit"
         onClick={handleSubmit}
       />
     </div>
