@@ -5,20 +5,13 @@
   justify-content: flex-start;
   align-items: center;
   padding-top: 30px;
-  background-color: rgb(7, 7, 39);
 }
 .title {
   color: #7674ed;
+  font-size: 40px;
 }
-.authWrap {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 300px;
-  height: 140px;
-  background-color: #7674ed;
-  border-radius: 30px;
+.text {
+  color: #7674ed;
 }
 .link {
   width: 200px;
@@ -36,8 +29,4 @@
 .link:hover,
 .link:focus {
   transform: scale(1.1);
-}
-.loader {
-  top: 5%;
-  transform: translateX(-9px);
 }
