@@ -1,0 +1,70 @@
+.wrapper {
+  display: flex;
+  flex-direction: column-reverse;
+  width: 100%;
+  min-height: 80vh;
+  border-bottom: 1px solid #9b9b9b;
+  padding: 20px;
+  overflow-y: auto;
+}
+.list {
+  width: 100%;
+}
+.messageItemFrom {
+  display: flex;
+  width: 100%;
+  height: auto;
+  margin-bottom: 10px;
+}
+.messageItemTo {
+  display: flex;
+  width: 100%;
+  height: auto;
+  margin-bottom: 10px;
+  justify-content: flex-end;
+}
+.avatar {
+  display: block;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  margin-right: 20px;
+}
+.textWrap {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  max-width: 100%;
+}
+.textFrom {
+  color: #f5f9ff;
+  border-radius: 40px;
+  padding: 10px;
+  padding-left: 15px;
+  background-color: #3c4154;
+  height: auto;
+  word-wrap: break-word;
+}
+.textTo {
+  color: #767676;
+  border-radius: 40px;
+  padding: 10px;
+  padding-left: 15px;
+  background-color: #e0e0e0;
+  width: auto;
+  height: auto;
+  word-wrap: break-word;
+}
+.dateFrom {
+  font-size: 10px;
+  padding-top: 5px;
+  padding-left: 10px;
+  color: #c1c1c1;
+}
+.dateTo {
+  font-size: 10px;
+  padding-top: 5px;
+  padding-left: 10px;
+  text-align: right;
+  color: #c1c1c1;
+}

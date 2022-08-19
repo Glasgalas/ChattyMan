@@ -1,24 +1,69 @@
-import logo from './logo.svg';
+import { lazy, Suspense } from 'react';
+import { Routes, Route } from 'react-router-dom';
+import PrivateRoute from './pages/privateRoute';
+import RedirectRoute from './pages/redirectRoute';
+import GoogleAuth from './components/googleAuth';
 import './App.css';
+
+const LoginPage = lazy(() => import('./pages/auth'));
+const Main = lazy(() => import('./pages/main'));
+const NotFound = lazy(() => import('./pages/notFound'));
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <RedirectRoute>
+              <Suspense>
+                <LoginPage />
+              </Suspense>
+            </RedirectRoute>
+          }
+        />
+        <Route
+          path="/login"
+          element={
+            <RedirectRoute>
+              <Suspense>
+                <LoginPage />
+              </Suspense>
+            </RedirectRoute>
+          }
+        />
+        <Route
+          path="/google-user"
+          element={
+            <Suspense>
+              <GoogleAuth />
+            </Suspense>
+          }
+        />
+        <Route
+          path="*"
+          element={
+            <PrivateRoute>
+              <Suspense>
+                <NotFound />
+              </Suspense>
+            </PrivateRoute>
+          }
+        />
+
+        <Route
+          path="/main"
+          element={
+            <PrivateRoute>
+              <Suspense>
+                <Main />
+              </Suspense>
+            </PrivateRoute>
+          }
+        />
+      </Routes>
+    </>
   );
 }
 

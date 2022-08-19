@@ -1,0 +1,14 @@
+.wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: start;
+}
+.wrapperMobile {
+  width: 100%;
+}
+.sidebarTablet {
+  width: 30vw;
+}
+.dialogTablet {
+  width: 70vw;
+}
