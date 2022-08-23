@@ -8,7 +8,13 @@
   background-color: rgb(7, 7, 39);
 }
 .title {
-  color: #7674ed;
+  background: linear-gradient(
+    150deg,
+    rgba(46, 165, 231, 1) 0%,
+    rgba(200, 62, 246, 1) 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 .authWrap {
   display: flex;
